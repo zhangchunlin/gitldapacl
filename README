@@ -1,0 +1,28 @@
+git ldap acl (access control list with apache+mod_wsgi)
+
+It is a tool for ldap acl of your git server,it is useful when you:
+-using git
+-using smart HTTP way( http://progit.org/2010/03/04/smart-http.html )
+-using apache
+-using win32 server( also can be used in linux,but I only test in win32 server)
+-you want to authenticate user with ldap (support Active Directory)
+-you want to do access control (with a acl ini file)
+-you want to use gitweb with same acl ini file to control (optional)
+
+You need:
+-git
+-apache
+-mod_wsgi ( http://code.google.com/p/modwsgi/ )
+-python
+-python-ldap ( http://pypi.python.org/pypi/python-ldap )
+-perl (optional,if you want to use gitweb)
+-CGI.pm (optional perl mod,see https://git.wiki.kernel.org/index.php/MSysGit:GitWeb if you use win32 server)
+
+You just need to config:
+-httpd.conf (you can see example in the source)
+-ldap_config.py (your ldap config)
+-gitauth_wsgi.py (see USER CONFIG PART in the beggin of this file)
+-gitacl.ini ( you can modify this file name,this is the acl ini file,see example in the source)
+
+
+The dict4ini.py & p3.py is copyed from dict4ini project ( http://pypi.python.org/pypi/Dict4Ini )
